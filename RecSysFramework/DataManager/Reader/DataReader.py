@@ -36,9 +36,9 @@ class DataReader(object):
         - user_original_ID_to_index
 
     """
-    __DATASET_SPLIT_SUBFOLDER = "splits/"
-    __DATASET_OFFLINE_SUBFOLDER = "raw-datasets/"
-    __DATASET_MAIN_ROOT_FOLDER = "NearestNeighborMF-data"
+    __DATASET_SPLIT_SUBFOLDER = "datasets/splits/"
+    __DATASET_OFFLINE_SUBFOLDER = "datasets/raw-datasets/"
+    __DATASET_MAIN_ROOT_FOLDER = "GitProjects/rsys/"
     DATASET_SPLIT_ROOT_FOLDER = None
     DATASET_OFFLINE_ROOT_FOLDER = None
 
