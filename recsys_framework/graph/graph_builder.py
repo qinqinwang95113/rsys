@@ -5,7 +5,7 @@ from networkx.convert_matrix import _generate_weighted_edges
 import logging
 
 
-def from_user_rating_matrix(urm, cell_value='weight', user_feature = None, item_feature = None):
+def from_user_rating_matrix(urm, cell_value='weight', user_feature=None, item_feature=None):
     #TODO: TO TEST!
     """
     create an undirected bipartite graph starting from a user-rating matrix
