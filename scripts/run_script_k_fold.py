@@ -1,8 +1,8 @@
-from RecSysFramework.Recommender.NonPersonalized import TopPop, Random
+from recsys_framework.recommender.non_personalized import TopPop, Random
 
-from RecSysFramework.DataManager.Reader import Movielens1MReader
-from RecSysFramework.DataManager.DataSplitter_k_fold import DataSplitter_Warm_k_fold
-from RecSysFramework.Evaluation import KFoldResultRepository
+from recsys_framework.data_manager.reader import Movielens1MReader
+from recsys_framework.data_manager.DataSplitter_k_fold import DataSplitter_Warm_k_fold
+from recsys_framework.evaluation import KFoldResultRepository
 
 
 if __name__ == '__main__':
@@ -18,7 +18,7 @@ if __name__ == '__main__':
     result_repo_alg2 = KFoldResultRepository(len(dataSplitter))
 
 
-    from RecSysFramework.Evaluation import SequentialEvaluator
+    from recsys_framework.evaluation import SequentialEvaluator
 
     for fold_index, (URM_train, URM_test) in dataSplitter:
 

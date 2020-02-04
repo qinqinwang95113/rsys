@@ -10,24 +10,24 @@ import unittest
 import os, shutil
 
 
-from RecSysFramework.Recommender.NonPersonalized import TopPop, Random, GlobalEffects
-from RecSysFramework.Recommender.KNN import UserKNNCF
-from RecSysFramework.Recommender.KNN import ItemKNNCF
-from RecSysFramework.Recommender.SLIM.BPR import SLIM as SLIM_BPR
-from RecSysFramework.Recommender.SLIM.ElasticNet import SLIM as SLIM_RMSE
-from RecSysFramework.Recommender.GraphBased.P3alphaRecommender import P3alpha
-from RecSysFramework.Recommender.GraphBased.RP3betaRecommender import RP3beta
+from recsys_framework.recommender.non_personalized import TopPop, Random, GlobalEffects
+from recsys_framework.recommender.knn import UserKNNCF
+from recsys_framework.recommender.knn import ItemKNNCF
+from recsys_framework.recommender.SLIM.BPR import SLIM as SLIM_BPR
+from recsys_framework.recommender.SLIM.ElasticNet import SLIM as SLIM_RMSE
+from recsys_framework.recommender.GraphBased.P3alphaRecommender import P3alpha
+from recsys_framework.recommender.GraphBased.RP3betaRecommender import RP3beta
 
-from RecSysFramework.Recommender.MatrixFactorization import BPRMF, FunkSVD, AsySVD
-from RecSysFramework.Recommender.MatrixFactorization import PureSVD
-from RecSysFramework.Recommender.MatrixFactorization import IALS
-from RecSysFramework.Recommender.MatrixFactorization import NMF
+from recsys_framework.recommender.MatrixFactorization import BPRMF, FunkSVD, AsySVD
+from recsys_framework.recommender.MatrixFactorization import PureSVD
+from recsys_framework.recommender.MatrixFactorization import IALS
+from recsys_framework.recommender.MatrixFactorization import NMF
 
 
-from RecSysFramework.Evaluation.Evaluator import EvaluatorHoldout
-from RecSysFramework.DataManager.Reader import Movielens1MReader
-from RecSysFramework.DataManager.Splitter import Holdout
-from RecSysFramework.Utils import EarlyStoppingModel
+from recsys_framework.evaluation.evaluator import EvaluatorHoldout
+from recsys_framework.data_manager.reader import Movielens1MReader
+from recsys_framework.data_manager.splitter import Holdout
+from recsys_framework.utils import EarlyStoppingModel
 
 
 class RecommenderTestCase(unittest.TestCase):

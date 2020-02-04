@@ -9,7 +9,7 @@ Created on 24/02/18
 from data.DataSplitter import DataSplitter_ColdItems_WarmValidation
 from data.NetflixEnhanced.NetflixEnhancedReader import NetflixEnhancedReader
 
-from RecSysFramework.Recommender.KNN import ItemKNNCBF
+from recsys_framework.recommender.knn import ItemKNNCBF
 
 import numpy as np
 

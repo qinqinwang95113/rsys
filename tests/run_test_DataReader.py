@@ -9,11 +9,11 @@ Created on 03/03/18
 import unittest
 import numpy as np
 
-from RecSysFramework.DataManager.Reader import BookCrossingReader
-from RecSysFramework.DataManager.Reader import LastFMHetrec2011Reader
-from RecSysFramework.DataManager.Reader import Movielens1MReader
-from RecSysFramework.DataManager.Reader import Movielens20MReader
-from RecSysFramework.DataManager.Reader import YelpReader
+from recsys_framework.data_manager.reader import BookCrossingReader
+from recsys_framework.data_manager.reader import LastFMHetrec2011Reader
+from recsys_framework.data_manager.reader import Movielens1MReader
+from recsys_framework.data_manager.reader import Movielens20MReader
+from recsys_framework.data_manager.reader import YelpReader
 
 
 class DataReaderTest(unittest.TestCase):
@@ -39,7 +39,7 @@ class DataReaderUtilsTest(unittest.TestCase):
 
     def test_reconcile_mapper_with_removed_tokens(self):
 
-        from RecSysFramework.DataManager.Utils import reconcile_mapper_with_removed_tokens
+        from recsys_framework.data_manager.utils import reconcile_mapper_with_removed_tokens
 
         original_mapper = {"a": 0, "b": 1, "c": 2, "d": 3, "e": 4}
 
@@ -59,7 +59,7 @@ class DataReaderUtilsTest(unittest.TestCase):
     def test_split_big_CSR_in_columns(self):
 
         import scipy.sparse as sps
-        from RecSysFramework.DataManager.Utils import split_big_CSR_in_columns
+        from recsys_framework.data_manager.utils import split_big_CSR_in_columns
 
         for num_split in [2, 3, 5, 12]:
 

@@ -14,7 +14,7 @@ class MetricsTestCase(unittest.TestCase):
 
     def test_Gini_Index(self):
 
-        from RecSysFramework.Evaluation.Metrics import Gini_Diversity
+        from recsys_framework.evaluation.metrics import Gini_Diversity
 
         n_items = 1000
 
@@ -30,7 +30,7 @@ class MetricsTestCase(unittest.TestCase):
 
     def test_Shannon_Entropy(self):
 
-        from RecSysFramework.Evaluation.Metrics import Shannon_Entropy
+        from recsys_framework.evaluation.metrics import Shannon_Entropy
 
         n_items = 1000
 
@@ -49,7 +49,7 @@ class MetricsTestCase(unittest.TestCase):
 
     def test_Diversity_list_all_equals(self):
 
-        from RecSysFramework.Evaluation.Metrics import Diversity_MeanInterList
+        from recsys_framework.evaluation.metrics import Diversity_MeanInterList
         import scipy.sparse as sps
 
         n_items = 3
@@ -93,7 +93,7 @@ class MetricsTestCase(unittest.TestCase):
 
     def test_Diversity_list(self):
 
-        from RecSysFramework.Evaluation.Metrics import Diversity_MeanInterList
+        from recsys_framework.evaluation.metrics import Diversity_MeanInterList
         import scipy.sparse as sps
 
         n_items = 500
@@ -137,7 +137,7 @@ class MetricsTestCase(unittest.TestCase):
 
     def test_AUC(self):
 
-        from RecSysFramework.Evaluation.Metrics import roc_auc, ROC_AUC
+        from recsys_framework.evaluation.metrics import roc_auc, ROC_AUC
 
         metric = ROC_AUC()
 
@@ -156,7 +156,7 @@ class MetricsTestCase(unittest.TestCase):
 
     def test_Recall(self):
 
-        from RecSysFramework.Evaluation.Metrics import recall, Recall
+        from recsys_framework.evaluation.metrics import recall, Recall
 
         metric = Recall()
 
@@ -185,7 +185,7 @@ class MetricsTestCase(unittest.TestCase):
 
     def test_Precision(self):
 
-        from RecSysFramework.Evaluation.Metrics import precision, Precision
+        from recsys_framework.evaluation.metrics import precision, Precision
 
         metric = Precision()
 
@@ -214,7 +214,7 @@ class MetricsTestCase(unittest.TestCase):
 
     def test_RR(self):
 
-        from RecSysFramework.Evaluation.Metrics import rr, MRR
+        from recsys_framework.evaluation.metrics import rr, MRR
 
         metric = MRR()
 
@@ -243,7 +243,7 @@ class MetricsTestCase(unittest.TestCase):
 
     def test_MAP(self):
 
-        from RecSysFramework.Evaluation.Metrics import MAP
+        from recsys_framework.evaluation.metrics import MAP
 
         pos_items = np.asarray([2, 4, 5, 10])
         ranked_list_1 = np.asarray([1, 2, 3, 4, 5])
@@ -280,7 +280,7 @@ class MetricsTestCase(unittest.TestCase):
 
     def test_NDCG(self):
 
-        from RecSysFramework.Evaluation.Metrics import dcg, ndcg, NDCG
+        from recsys_framework.evaluation.metrics import dcg, ndcg, NDCG
 
         metric = NDCG()
 

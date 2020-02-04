@@ -3,9 +3,9 @@
 
 #from GraphBased.RP3beta_ML import RP3betaRecommender_ML
 
-from RecSysFramework.Recommender.KNN import ItemKNNCF
+from recsys_framework.recommender.knn import ItemKNNCF
 
-from RecSysFramework.DataManager.Reader import BrightkiteReader
+from recsys_framework.data_manager.reader import BrightkiteReader
 
 if __name__ == '__main__':
 
@@ -23,7 +23,7 @@ if __name__ == '__main__':
     # dataset_object.load_data()
     #
     #
-    # from DataManager.DataReaderPostprocessing_User_sample import DataReaderPostprocessing_User_sample
+    # from data_manager.DataReaderPostprocessing_User_sample import DataReaderPostprocessing_User_sample
     # dataset_object = DataReaderPostprocessing_User_sample(dataset_object, user_quota=0.1)
     # dataset_object.load_data()
     #
@@ -31,7 +31,7 @@ if __name__ == '__main__':
     # exit()
     #
 
-    from RecSysFramework.DataManager.DataSplitter_leave_k_out import DataSplitter_leave_k_out
+    from recsys_framework.data_manager.DataSplitter_leave_k_out import DataSplitter_leave_k_out
 
     dataset_object = BrightkiteReader()
 
@@ -51,7 +51,7 @@ if __name__ == '__main__':
     # URM_test = URM_train.copy()
     #
     #
-    # from DataManager.DataSplitter_k_fold import DataSplitter_Warm_k_fold, DataSplitter_ColdItems_k_fold
+    # from data_manager.DataSplitter_k_fold import DataSplitter_Warm_k_fold, DataSplitter_ColdItems_k_fold
     #
     # dataSplitter = DataSplitter_Warm_k_fold(dataset)
     # #dataSplitter = DataSplitter_ColdItems_k_fold(dataset)
@@ -128,13 +128,13 @@ if __name__ == '__main__':
     #
     #
     #
-    # from Base.Evaluation.metrics import Diversity
+    # from Base.evaluation.metrics import Diversity
     #
     # recommender_cbf = ItemKNNCBFRecommender(ICM_train, URM_train)
     # recommender_cbf.fit()
     # custom_diversity = Diversity(1-recommender_cbf.W_sparse.toarray())
 
-    from RecSysFramework.Evaluation import EvaluatorHoldout
+    from recsys_framework.evaluation import EvaluatorHoldout
 
     # evaluator = SequentialEvaluator(URM_test, [5,20])#, diversity_object=custom_diversity)
     #

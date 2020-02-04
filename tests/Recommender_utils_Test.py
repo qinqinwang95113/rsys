@@ -6,7 +6,7 @@ Created on 30/09/17
 @author: Maurizio Ferrari Dacrema
 """
 
-from RecSysFramework.Recommender.Utils import similarityMatrixTopK
+from recsys_framework.recommender.utils import similarityMatrixTopK
 
 import numpy as np
 import scipy.sparse as sps

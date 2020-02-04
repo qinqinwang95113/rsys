@@ -9,11 +9,11 @@ Created on 03/03/18
 import unittest
 import numpy as np
 
-from RecSysFramework.DataManager.Reader import Movielens20MReader
+from recsys_framework.data_manager.reader import Movielens20MReader
 
-from RecSysFramework.DataManager.DatasetPostprocessing import KCore
-from RecSysFramework.DataManager.DatasetPostprocessing import ImplicitURM
-from RecSysFramework.DataManager.DatasetPostprocessing import UserSample
+from recsys_framework.data_manager.dataset_postprocessing import KCore
+from recsys_framework.data_manager.dataset_postprocessing import ImplicitURM
+from recsys_framework.data_manager.dataset_postprocessing import UserSample
 
 
 class DataPostprocessingTestCase(unittest.TestCase):

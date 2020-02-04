@@ -6,20 +6,20 @@ Created on 22/11/17
 @author: Maurizio Ferrari Dacrema
 """
 
-from RecSysFramework.Recommender.NonPersonalized import TopPop, Random, GlobalEffects
-from RecSysFramework.Recommender.KNN import UserKNNCF
-from RecSysFramework.Recommender.KNN import ItemKNNCF, CFW_D, CFW_DVV
-from RecSysFramework.Recommender.SLIM.BPR import SLIM as SLIM_BPR
-from RecSysFramework.Recommender.SLIM.ElasticNet import SLIM as SLIM_ElasticNet
-from RecSysFramework.Recommender.GraphBased import P3alpha
-from RecSysFramework.Recommender.GraphBased import RP3beta
+from recsys_framework.recommender.non_personalized import TopPop, Random, GlobalEffects
+from recsys_framework.recommender.knn import UserKNNCF
+from recsys_framework.recommender.knn import ItemKNNCF, CFW_D, CFW_DVV
+from recsys_framework.recommender.SLIM.BPR import SLIM as SLIM_BPR
+from recsys_framework.recommender.SLIM.ElasticNet import SLIM as SLIM_ElasticNet
+from recsys_framework.recommender.GraphBased import P3alpha
+from recsys_framework.recommender.GraphBased import RP3beta
 
-from RecSysFramework.Recommender.KNN import ItemKNNCFCBFHybrid
+from recsys_framework.recommender.knn import ItemKNNCFCBFHybrid
 
-from RecSysFramework.Recommender.MatrixFactorization import BPRMF, FunkSVD, AsySVD, FBSM
-from RecSysFramework.Recommender.MatrixFactorization import PureSVD
-from RecSysFramework.Recommender.MatrixFactorization import IALS
-from RecSysFramework.Recommender.MatrixFactorization import NMF
+from recsys_framework.recommender.MatrixFactorization import BPRMF, FunkSVD, AsySVD, FBSM
+from recsys_framework.recommender.MatrixFactorization import PureSVD
+from recsys_framework.recommender.MatrixFactorization import IALS
+from recsys_framework.recommender.MatrixFactorization import NMF
 
 
 from skopt.space import Real, Integer, Categorical
@@ -27,9 +27,9 @@ from skopt.space import Real, Integer, Categorical
 
 import traceback
 
-from RecSysFramework.ParameterTuning.SearchBayesianSkopt import SearchBayesianSkopt
-from RecSysFramework.ParameterTuning.SearchSingleCase import SearchSingleCase
-from RecSysFramework.ParameterTuning.SearchAbstractClass import SearchInputRecommenderArgs
+from recsys_framework.parameter_tuning.SearchBayesianSkopt import SearchBayesianSkopt
+from recsys_framework.parameter_tuning.search_single_case import SearchSingleCase
+from recsys_framework.parameter_tuning.search_abstract_class import SearchInputRecommenderArgs
 
 
 
@@ -719,8 +719,8 @@ def read_data_split_and_search():
         - A _best_result_test file which contains a dictionary with the results, on the test set, of the best solution chosen using the validation set
     """
 
-    from RecSysFramework.DataManager.Reader import Movielens1MReader
-    from RecSysFramework.DataManager.DataSplitter_k_fold import DataSplitter_Warm_k_fold
+    from recsys_framework.data_manager.reader import Movielens1MReader
+    from recsys_framework.data_manager.DataSplitter_k_fold import DataSplitter_Warm_k_fold
 
 
     dataset_object = Movielens1MReader()
@@ -753,7 +753,7 @@ def read_data_split_and_search():
         # SLIMElasticNetRecommender
     ]
 
-    from RecSysFramework.Evaluation import EvaluatorHoldout
+    from recsys_framework.evaluation import EvaluatorHoldout
 
     evaluator_validation = EvaluatorHoldout(cutoff_list=[5])
     evaluator_validation.global_setup(URM_validation)

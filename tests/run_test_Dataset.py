@@ -8,17 +8,17 @@ Created on 22/11/2018
 
 import traceback
 
-from RecSysFramework.Recommender.KNN import ItemKNNCBF
-from RecSysFramework.Recommender.NonPersonalized import TopPop
+from recsys_framework.recommender.knn import ItemKNNCBF
+from recsys_framework.recommender.non_personalized import TopPop
 
-from RecSysFramework.Evaluation import EvaluatorHoldout
+from recsys_framework.evaluation import EvaluatorHoldout
 
-from RecSysFramework.DataManager.Reader import Movielens100KReader
-from RecSysFramework.DataManager.Reader import Movielens1MReader
-from RecSysFramework.DataManager.Reader import Movielens10MReader
-from RecSysFramework.DataManager.Reader import Movielens20MReader
+from recsys_framework.data_manager.reader import Movielens100KReader
+from recsys_framework.data_manager.reader import Movielens1MReader
+from recsys_framework.data_manager.reader import Movielens10MReader
+from recsys_framework.data_manager.reader import Movielens20MReader
 
-from RecSysFramework.DataManager.Reader import EpinionsReader
+from recsys_framework.data_manager.reader import EpinionsReader
 
 
 def run_dataset(dataset_class):
@@ -27,9 +27,9 @@ def run_dataset(dataset_class):
     try:
         dataset_object = dataset_class()
 
-        from RecSysFramework.DataManager.DataSplitter_leave_k_out import DataSplitter_leave_k_out
-        from RecSysFramework.DataManager import DataReaderPostprocessing_K_Cores
-        from RecSysFramework.DataManager import DataReaderPostprocessing_Implicit_URM
+        from recsys_framework.data_manager.DataSplitter_leave_k_out import DataSplitter_leave_k_out
+        from recsys_framework.data_manager import DataReaderPostprocessing_K_Cores
+        from recsys_framework.data_manager import DataReaderPostprocessing_Implicit_URM
 
         dataset_object = DataReaderPostprocessing_K_Cores(dataset_object, k_cores_value=5)
         dataset_object = DataReaderPostprocessing_Implicit_URM(dataset_object)

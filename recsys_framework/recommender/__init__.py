@@ -1,0 +1,4 @@
+from .base_recommender import Recommender
+from .base_cbf_recommender import BaseItemCBFRecommender, BaseUserCBFRecommender
+from .similarity_matrix_recommender import SimilarityMatrixRecommender, UserSimilarityMatrixRecommender, ItemSimilarityMatrixRecommender
+from .predefined_list_recommender import PredefinedListRecommender

@@ -9,13 +9,13 @@ Created on 02/08/18
 
 import unittest
 
-from RecSysFramework.DataManager.Reader import Movielens1MReader
+from recsys_framework.data_manager.reader import Movielens1MReader
 
-from RecSysFramework.DataManager.Splitter import Holdout, ColdItemsHoldout
-from RecSysFramework.DataManager.Splitter import WarmItemsKFold, ColdItemsKFold
-from RecSysFramework.DataManager.Splitter import LeaveKOut
+from recsys_framework.data_manager.splitter import Holdout, ColdItemsHoldout
+from recsys_framework.data_manager.splitter import WarmItemsKFold, ColdItemsKFold
+from recsys_framework.data_manager.splitter import LeaveKOut
 
-from RecSysFramework.Utils import invert_dictionary
+from recsys_framework.utils import invert_dictionary
 
 
 class SplitterTestCase(unittest.TestCase):

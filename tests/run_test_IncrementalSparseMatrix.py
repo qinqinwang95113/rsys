@@ -10,7 +10,7 @@ Created on 09/09/2018
 import unittest
 import scipy.sparse as sps
 
-from RecSysFramework.Utils import IncrementalSparseMatrix
+from recsys_framework.utils import IncrementalSparseMatrix
 
 
 def sparse_are_equals(A, B):

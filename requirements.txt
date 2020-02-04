@@ -11,3 +11,4 @@ telepot
 tqdm
 similaripy
 seaborn
+networkx
