@@ -7,10 +7,11 @@ from recsys_framework.graph.graph_utils import is_real_iterable
 from collections import Counter
 from networkx import Graph as nxGraph
 from tqdm import tqdm
+from recsys_framework.utils.decorator import timeit
 
 __all__ = [
     "UniformRandomWalker",
-    "BiasedRandomWalk",
+    "BiasedRandomWalker",
     #"UniformRandomMetaPathWalk",
     #"SampledBreadthFirstWalk",
     #"SampledHeterogeneousBreadthFirstWalk",
@@ -173,8 +174,9 @@ class UniformRandomWalker(BaseWalker):
         self._check_common_parameters(nodes, n, length, seed)
         rnd_seed = self._get_random_state(seed)
 
+        print('Performing RWs...')
         # for each root node, do n walks
-        self.last_walk = [self._walk(rnd_seed, node, length) for node in nodes for _ in range(n)]
+        self.last_walk = [self._walk(rnd_seed, node, length) for node in tqdm(nodes) for _ in range(n)]
         return self.last_walk
 
     def _walk(self, rnd_seed, start_node, length):
@@ -226,12 +228,13 @@ def naive_weighted_choices(rs, weights):
     return idx
 
 
-class BiasedRandomWalk(BaseWalker):
+class BiasedRandomWalker(BaseWalker):
     """
     Performs biased second order random walks (like those used in Node2Vec algorithm
     https://snap.stanford.edu/node2vec/) controlled by the values of two parameters p and q.
     """
 
+    #TODO: too slow !!! speed up
     def run(self, nodes, n, length, p=1.0, q=1.0, seed=None, weighted=False):
 
         """
@@ -293,12 +296,14 @@ class BiasedRandomWalk(BaseWalker):
         iq = 1.0 / q
 
         walks = []
-        for node in nodes:  # iterate over root nodes
+        print('Performing RWs...')
+        for node in tqdm(nodes):  # iterate over root nodes
             for walk_number in range(n):  # generate n walks per root node
                 # the walk starts at the root
                 walk = [node]
 
                 neighbours = list(self.graph.neighbors(node))
+                #neighbours = dict(list(zip(_neighbours, np.ones(len(_neighbours)))))
 
                 previous_node = node
                 previous_node_neighbours = neighbours

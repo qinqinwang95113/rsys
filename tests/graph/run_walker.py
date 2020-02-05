@@ -14,6 +14,6 @@ if __name__ == '__main__':
     bip_graph = gbuilder.from_user_rating_matrix(m100k_urm)
 
     ### Select a node random walk starting from it
-    walker = BiasedRandomWalk(bip_graph)
+    walker = BiasedRandomWalker(bip_graph)
     rw_result = walker.run(nodes=[0], n=5, length=2)
     print(rw_result)
